@@ -274,19 +274,14 @@ public sealed class ViewPage : DefaultPage
 
 	private void CreatePageOption(TextWriter writer)
 	{
-		//Todo: add page UI, add localization:
-		/// page
-		/// prev
-		/// next
-		/// Assets Per Page
-		new Label(writer).WithFor("pageCollection").WithClass("me-2").Close("Page");
+		new Label(writer).WithFor("pageCollection").WithClass("me-2").Close(Localization.Page);
 		new Button(writer)
 				.WithId("prevBtn")
 				.WithClass("ms-2")
 				.WithType("button")
 				.WithCustomAttribute("v-else")
 				.WithCustomAttribute("disabled")
-				.Close("prev");
+				.Close(Localization.Prev);
 
 		new Label(writer).WithId("pageNo").WithClass("ms-2").Close("1");
 
@@ -296,9 +291,9 @@ public sealed class ViewPage : DefaultPage
 				.WithClass("ms-2")
 				.WithCustomAttribute("v-else")
 				.WithCustomAttribute("disabled")
-				.Close("next");
+				.Close(Localization.Next);
 
-		new Label(writer).WithClass("ms-2").Close("Assets Per Page");
+		new Label(writer).WithClass("ms-2").Close(Localization.AssetPerPage);
 
 		using (new Select(writer)
 			.WithId("assetPerPage")
