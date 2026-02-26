@@ -275,17 +275,17 @@ public sealed class ViewPage : DefaultPage
 	{
 		new Label(writer).WithFor("pageCollection").WithClass("me-2").Close(Localization.Page);
 		new Button(writer)
-				.WithId("prevBtn")
+				.WithId("previousButton")
 				.WithClass("ms-2")
 				.WithType("button")
 				.WithCustomAttribute("v-else")
 				.WithCustomAttribute("disabled")
-				.Close(Localization.Prev);
+				.Close(Localization.Previous);
 
-		new Label(writer).WithId("pageNo").WithClass("ms-2").Close("1");
+		new Label(writer).WithId("pageNumber").WithClass("ms-2").Close("1");
 
 		new Button(writer)
-				.WithId("nextBtn")
+				.WithId("nextButton")
 				.WithType("button")
 				.WithClass("ms-2")
 				.WithCustomAttribute("v-else")
