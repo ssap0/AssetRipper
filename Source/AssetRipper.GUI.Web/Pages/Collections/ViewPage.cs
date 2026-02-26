@@ -307,7 +307,6 @@ public sealed class ViewPage : DefaultPage
 				new Option(writer)
 				.WithValue("" + count)
 				.Close("" + count);
-				
 			}
 		}
 	}
