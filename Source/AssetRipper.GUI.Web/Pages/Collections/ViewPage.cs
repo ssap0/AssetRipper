@@ -152,7 +152,7 @@ public sealed class ViewPage : DefaultPage
 						});
 					}
 
-					const pageFilter = document.getElementById('assetPerPage');
+					const pageFilter = document.getElementById('assetsPerPage');
 					const previousButton = document.getElementById('previousButton');
 					const nextButton = document.getElementById('nextButton');
 					if (pageFilter) {
@@ -173,40 +173,40 @@ public sealed class ViewPage : DefaultPage
 									rows[i].style.display = '';
 								}
 
-								if(prevButton){
-									prevButton.disabled = true;
+								if(previousButton){
+									previousButton.disabled = true;
 								}
 
 								if(nextButton){
 									nextButton.disabled = true;
 								}
 
-								document.getElementById('pageNo').innerHTML = '1';
+								document.getElementById('pageNumber').innerHTML = '1';
 							}else {
 								const selectedCount = parseInt(this.value);
 
 								if(rows.length < selectedCount * pageNo){
 									pageNo = Math.ceil(rows.length / selectedCount);
-									document.getElementById('pageNo').innerHTML = '' + pageNo;
+									document.getElementById('pageNumber').innerHTML = '' + pageNumber;
 
 									if(nextButton){
 										nextButton.disabled = true;
 									}
 
-									if(pageNo == 1){
-										if(prevButton){
-											prevButton.disabled = true;
+									if(pageNumber == 1){
+										if(previousButton){
+											previousButton.disabled = true;
 										}
 									}
-								}else if(rows.length >= selectedCount * pageNo){
+								}else if(rows.length >= selectedCount * pageNumber){
 									if(nextButton){
 										nextButton.disabled = false;
 									}
 								}
 
-								const start = selectedCount * (pageNo - 1);
+								const start = selectedCount * (pageNumber - 1);
 								for(var i = 0; i < rows.length; ++i){
-									if(i >= start && i < selectedCount * pageNo){
+									if(i >= start && i < selectedCount * pageNumber){
 										rows[i].style.display = '';
 									}else {
 										rows[i].style.display = 'none';
@@ -217,13 +217,13 @@ public sealed class ViewPage : DefaultPage
 					}
 
 					
-					if(prevButton){
+					if(previousButton){
 						prevButton.addEventListener('click', function() {
-							var pageNo = parseInt(document.getElementById('pageNo').innerHTML);
-							--pageNo;
-							document.getElementById('pageNo').innerHTML = "" + pageNo;
+							var pageNumber = parseInt(document.getElementById('pageNumber').innerHTML);
+							--pageNumber;
+							document.getElementById('pageNumber').innerHTML = "" + pageNumber;
 
-							if(pageNo == 1){
+							if(pageNumber == 1){
 								this.disabled = true;
 							}
 
@@ -240,12 +240,12 @@ public sealed class ViewPage : DefaultPage
 
 					if(nextButton){
 						nextButton.addEventListener('click', function() {
-							var pageNo = parseInt(document.getElementById('pageNo').innerHTML);
-							++pageNo;
-							document.getElementById('pageNo').innerHTML = "" + pageNo;
+							var pageNumber = parseInt(document.getElementById('pageNumber').innerHTML);
+							++pageNumber;
+							document.getElementById('pageNumber').innerHTML = "" + pageNumber;
 				
-							if(prevButton){
-								prevButton.disabled = false;
+							if(previousButton){
+								previousButton.disabled = false;
 							}
 
 							if (pageFilter) {
@@ -256,7 +256,7 @@ public sealed class ViewPage : DefaultPage
 								}
 								const rows = document.querySelectorAll(query);
 								const selectedCount = parseInt(pageFilter.value);
-								if(rows.length < selectedCount * pageNo){
+								if(rows.length < selectedCount * pageNumber){
 									this.disabled = true;
 								}
 
@@ -291,10 +291,10 @@ public sealed class ViewPage : DefaultPage
 				.WithCustomAttribute("disabled")
 				.Close(Localization.Next);
 
-		new Label(writer).WithClass("ms-2").Close(Localization.AssetPerPage);
+		new Label(writer).WithClass("ms-2").Close(Localization.AssetsPerPage);
 
 		using (new Select(writer)
-			.WithId("assetPerPage")
+			.WithId("assetsPerPage")
 			.WithClass("ms-2")
 			.End())
 		{
