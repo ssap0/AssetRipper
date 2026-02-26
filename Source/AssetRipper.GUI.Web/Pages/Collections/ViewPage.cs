@@ -11,7 +11,7 @@ public sealed class ViewPage : DefaultPage
 
 	public override string GetTitle() => Collection.Name;
 
-	private readonly List<int> assetsPerPage = new() {500, 1000, 2000, 3000, 5000};
+	private readonly int[] assetsPerPage = [500, 1000, 2000, 3000, 5000];
 
 	public override void WriteInnerContent(TextWriter writer)
 	{
