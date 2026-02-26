@@ -185,8 +185,8 @@ public sealed class ViewPage : DefaultPage
 							}else {
 								const selectedCount = parseInt(this.value);
 
-								if(rows.length < selectedCount * pageNo){
-									pageNo = Math.ceil(rows.length / selectedCount);
+								if(rows.length < selectedCount * pageNumber){
+									pageNumber = Math.ceil(rows.length / selectedCount);
 									document.getElementById('pageNumber').innerHTML = '' + pageNumber;
 
 									if(nextButton){
@@ -218,7 +218,7 @@ public sealed class ViewPage : DefaultPage
 
 					
 					if(previousButton){
-						prevButton.addEventListener('click', function() {
+						previousButton.addEventListener('click', function() {
 							var pageNumber = parseInt(document.getElementById('pageNumber').innerHTML);
 							--pageNumber;
 							document.getElementById('pageNumber').innerHTML = "" + pageNumber;
