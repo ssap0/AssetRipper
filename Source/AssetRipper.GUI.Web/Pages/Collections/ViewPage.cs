@@ -145,7 +145,6 @@ public sealed class ViewPage : DefaultPage
 								}
 							});
 
-							//const pageFilter = document.getElementById('assetPerPage');
 							if (pageFilter) {
 								var event = new Event('change');
 								pageFilter.dispatchEvent(event);
