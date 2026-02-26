@@ -170,7 +170,6 @@ public sealed class ViewPage : DefaultPage
 
 							const selected = this.value;
 							if(selected == ''){
-								console.log("Hi from");
 								for(var i = 0; i < rows.length; ++i){
 									rows[i].style.display = '';
 								}
