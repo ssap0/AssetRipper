@@ -165,7 +165,7 @@ public sealed class ViewPage : DefaultPage
 								query +=  '[data-class=\"' + selectedClass + '\"]';
 							}
 
-							var pageNo = parseInt(document.getElementById('pageNo').innerHTML);
+							var pageNumber = parseInt(document.getElementById('pageNumber').innerHTML);
 							const rows = document.querySelectorAll(query);
 
 							const selected = this.value;
