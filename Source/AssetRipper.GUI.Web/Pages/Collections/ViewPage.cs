@@ -154,8 +154,8 @@ public sealed class ViewPage : DefaultPage
 					}
 
 					const pageFilter = document.getElementById('assetPerPage');
-					const prevButton = document.getElementById('prevBtn');
-					const nextButton = document.getElementById('nextBtn');
+					const previousButton = document.getElementById('previousButton');
+					const nextButton = document.getElementById('nextButton');
 					if (pageFilter) {
 						pageFilter.addEventListener('change', function() {
 							var selectedClass = "";
